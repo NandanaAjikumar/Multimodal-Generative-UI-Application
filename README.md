@@ -49,17 +49,24 @@ All charts are rendered with **Plotly**, giving you real pie charts, scatter plo
 
 ### Python Dependencies
 
+All dependencies are listed in `requirements.txt`. Install them in one command:
+
+```bash
+pip install -r requirements.txt
 ```
-streamlit
-openai
-pandas
-plotly
-pillow
-python-dotenv
-pydantic
-pypdf
-python-docx
-```
+
+| Package | Purpose |
+|---|---|
+| `streamlit` | Web app framework |
+| `openai` | OpenAI API client |
+| `pandas` | Data loading and analysis |
+| `plotly` | Interactive chart rendering |
+| `pillow` | Image handling |
+| `python-dotenv` | Loads `.env` API key at startup |
+| `pydantic` | JSON schema validation |
+| `pypdf` | PDF text extraction |
+| `python-docx` | Word document parsing |
+| `statsmodels` | OLS trendline in scatter charts *(optional)* |
 
 ---
 
@@ -83,7 +90,7 @@ venv\Scripts\activate           # Windows
 **3. Install dependencies**
 
 ```bash
-pip install streamlit openai pandas plotly pillow python-dotenv pydantic pypdf python-docx
+pip install -r requirements.txt
 ```
 
 ---
@@ -207,6 +214,7 @@ This ensures the **most informative** chart always appears automatically, withou
 ```
 generative-ui-builder/
 ├── UI_app.py          # Main application (single file)
+├── requirements.txt   # All Python dependencies
 ├── .env               # API key — never committed (listed in .gitignore)
 ├── .env.example       # Safe template to commit; shows required keys without values
 ├── .gitignore         # Excludes secrets, venvs, caches, data files, and IDE folders
@@ -243,7 +251,7 @@ OPENAI_API_KEY=your-api-key-here
 
 ```bash
 git init
-git add UI_app.py README.md .gitignore .env.example
+git add UI_app.py requirements.txt README.md .gitignore .env.example
 git commit -m "Initial commit"
 ```
 
